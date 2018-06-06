@@ -25,6 +25,15 @@
        ReactDOM.render(
          <Greeting />, document.getElementById('app')
        );
+
+       function Welcome(props) {
+         return <h2>Hello, {props.name}</h2>;
+       }
+
+       const element = <Welcome name="Kind Sir!" />;
+       ReactDOM.render(
+         element, document.getElementById('app')
+       );
      </script>
   </body>
 </html>
