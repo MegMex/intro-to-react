@@ -19,6 +19,9 @@
           this.state = {
             number:1
           }
+          this.state = {
+            saying:"Practice makes perfect!"
+          }
         }
 
         render() {
@@ -28,6 +31,7 @@
               <h2>Current program: {this.props.label}</h2>
               <h3>Current week: {this.state.number}</h3>
               <p>Current Date: {this.props.date.toLocaleDateString()}</p>
+              <p>Phrase: {this.state.saying}</p>
             </div>
           );
         }
