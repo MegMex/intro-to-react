@@ -15,14 +15,12 @@ class App extends Component {
     };
   }
 
-  deleteTodo (key) {
-    const todos = this.state.todos
-    const filteredTodos = this.state.todos.filter(function (todo) {
-      return (todo.key !== todos.key)
-    });
+  deleteTodo (toDelete) {
+    console.log(this.state.todos);
+    this.state.todos.splice(toDelete, 1);
 
     this.setState({
-      todos:filteredTodos
+      todos:this.state.todos
     });
 
   }
@@ -55,10 +53,10 @@ class App extends Component {
             description={ todo.description }
             isCompleted={ todo.isCompleted }
             toggleComplete={ () => this.toggleComplete(index) }
-            deleteTodo={ () => this.deleteTodo(todo) } />
+            deleteTodo={ () => this.deleteTodo(index) } />
           )}
         </ul>
-        
+
         <form onSubmit={ (e) => this.handleSubmit(e) }>
           <input type="text" value={this.state.newToDoDescription } onChange={ (e) => this.handleChange(e) } />
           <input type="submit" />
